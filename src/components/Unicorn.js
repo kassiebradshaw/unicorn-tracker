@@ -1,7 +1,7 @@
 import React from 'react';
+import LocationForm from './LocationForm';
 
 class Unicorn extends React.Component {
-
     render() {
         return (
             <div>
@@ -10,8 +10,7 @@ class Unicorn extends React.Component {
                 <p>Unicorn Color: {this.props.color}</p>
                 <p>Location: {this.props.location}</p>
 
-                <form>
-                </form>
+                <LocationForm />
             </div>
         );
     }
