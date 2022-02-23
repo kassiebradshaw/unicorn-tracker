@@ -10,43 +10,34 @@ class App extends React.Component {
 
     this.state = {
       unicornData: [
-        { name: "glittershy", favFood: "apple", color: "pink", location: "barn" },
-        { name: "unicorn2", favFood: "cookies", color: "blue", location: "barn" },
-        { name: "pappy", favFood: "hay", color: "pink", location: "barn" },
-        { name: "gru", favFood: "carrots", color: "yellow", location: "barn" },
-        { name: "harry potter", favFood: "sugar", color: "red", location: "barn" },
-        { name: "pinky pie", favFood: "carrots", color: "pink", location: "barn" },
-        { name: "hobbit", favFood: "apple", color: "pink", location: "barn" },
-        { name: "turtle", favFood: "apple", color: "green", location: "barn" },
-        { name: "starlight", favFood: "hay", color: "pink", location: "barn" },
-        { name: "glimmer", favFood: "apple", color: "pink", location: "barn" },
-        { name: "buttercup", favFood: "apple", color: "yellow", location: "barn" },
-        { name: "bluenote", favFood: "carrots", color: "purple", location: "barn" },
-        { name: "bracer britches", favFood: "apple", color: "pink", location: "barn" },
+        { name: "Glittershy", favFood: "apple", color: "pink", location: "barn" },
+        { name: "Unicorn2", favFood: "cookies", color: "blue", location: "barn" },
+        { name: "Pappy", favFood: "hay", color: "pink", location: "barn" },
+        { name: "Gru", favFood: "carrots", color: "yellow", location: "barn" },
+        { name: "Harry Potter", favFood: "sugar", color: "red", location: "barn" },
+        { name: "Pinky Pie", favFood: "carrots", color: "pink", location: "barn" },
+        { name: "Hobbit", favFood: "apple", color: "pink", location: "barn" },
+        { name: "Turtle", favFood: "apple", color: "green", location: "barn" },
+        { name: "Starlight", favFood: "hay", color: "pink", location: "barn" },
+        { name: "Glimmer", favFood: "apple", color: "pink", location: "barn" },
+        { name: "Buttercup", favFood: "apple", color: "yellow", location: "barn" },
+        { name: "Bluenote", favFood: "carrots", color: "purple", location: "barn" },
+        { name: "Bracer Britches", favFood: "apple", color: "pink", location: "barn" },
       ],
-      location: '',
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    console.log(`Changing it - ${event.target.value}`)
-    this.setState({ location: event.target.value })
-  };
-
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log(`Submitting it - ${this.state.location}`);
+  handleUpdateData (unicorn, location, idx) {
+    console.log(idx, unicorn, location);
   }
 
     render() {
       return (
         <div className="App">
           <Header />
-          <Main unicornData={this.state.unicornData} 
-          handleChange={this.handleChange()}
-          handleSubmit={this.handleSubmit()}/>
+          <Main 
+          unicornData={this.state.unicornData} 
+          handleUpdate={this.handleUpdateData}/>
           <Footer />
         </div>
       );
