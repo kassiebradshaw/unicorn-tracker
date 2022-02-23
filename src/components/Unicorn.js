@@ -6,6 +6,7 @@ class Unicorn extends React.Component {
         super(props);
 
         this.state = {
+            location: this.props.location,
             newLocation: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,7 +16,8 @@ class Unicorn extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         console.log(`The form was submitted. ${this.props.name} has been moved to: ${this.state.newLocation}`);
-        this.props.handleUpdate(this.props.name, this.state.newLocation, this.props.idx);
+        this.setState({location: this.state.newLocation});
+        // this.props.handleUpdate(this.props.name, this.state.Location, this.props.idx);
     }
 
     handleChangeLocation(event) {
@@ -28,7 +30,7 @@ class Unicorn extends React.Component {
                 <h1>Name: {this.props.name}</h1>
                 <p>Favorite Food: {this.props.favFood}</p>
                 <p>Unicorn Color: {this.props.color}</p>
-                <p>Location: {this.props.location}</p>
+                <p>Location: {this.state.location}</p>
 
                 <form onSubmit={this.handleSubmit}>
                     <label>Move Unicorn To: 
