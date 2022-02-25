@@ -27,8 +27,20 @@ class App extends React.Component {
     }
   }
 
-  handleUpdateData = (unicorn) => {
-    console.log("Unicorn in handler", unicorn);
+  handleUpdateData = (updatedUnicorn, newLocation) => {
+    // let findUnicorn = this.state.unicornData.filter(correctUnicorn =>
+    //   correctUnicorn.name === updatedUnicorn.name);
+    // console.log("Did I find the right unicorn in state?", findUnicorn);
+
+    let newData = this.state.unicornData.map(thisUnicorn => {
+      if (thisUnicorn.name === updatedUnicorn.name) {
+        thisUnicorn.location = newLocation;}
+        return thisUnicorn;
+    })
+
+    this.setState({unicornData: newData});
+    console.log(this.state.unicornData);
+    
   }
 
     render() {
