@@ -1,5 +1,5 @@
 import React from 'react';
-// import LocationForm from './LocationForm';
+import Card from 'react-bootstrap/Card';
 
 class Unicorn extends React.Component {
     constructor(props) {
@@ -15,6 +15,7 @@ class Unicorn extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        this.props.handleUpdate(this.props.unicorn);
         console.log(`The form was submitted. ${this.props.name} has been moved to: ${this.state.newLocation}`);
         this.setState({location: this.state.newLocation});
         // this.props.handleUpdate(this.props.name, this.state.Location, this.props.idx);
@@ -26,14 +27,16 @@ class Unicorn extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Name: {this.props.name}</h1>
-                <p>Favorite Food: {this.props.favFood}</p>
-                <p>Unicorn Color: {this.props.color}</p>
-                <p>Location: {this.state.location}</p>
+            <Card style={{backgroundColor:`${this.props.color}`}} idx={this.props.idx} className="unicorns">
+                <Card.Img variant="top" src={this.props.imgUrl}/>
+                <Card.Body>
+                <Card.Title>Name: {this.props.name}</Card.Title>
+                <Card.Text>Favorite Food: {this.props.favFood}</Card.Text>
+                <Card.Text>Unicorn Color: {this.props.color}</Card.Text>
+                <Card.Text>Current location: {this.state.location}</Card.Text>
 
                 <form onSubmit={this.handleSubmit}>
-                    <label>Move Unicorn To: 
+                    <label>Move Unicorn To:       
                         <select value={this.state.newLocation} onChange={this.handleChangeLocation}>
                             <option value="barn">Barn</option>
                             <option value="pasture">Pasture</option>
@@ -42,7 +45,8 @@ class Unicorn extends React.Component {
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
-            </div>
+                </Card.Body>
+            </Card>
         );
     }
 }

@@ -4,7 +4,7 @@ class Header extends React.Component {
     render () {
         return (
             <div id="header">
-                <h1>UNICORNS!</h1>
+                <h1>UNICORN TRACKER!</h1>
             </div>
         )
     }
