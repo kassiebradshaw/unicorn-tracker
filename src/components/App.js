@@ -27,9 +27,9 @@ class App extends React.Component {
     }
   }
 
-  handleUpdateData = (unicorn) => {
-    console.log("Unicorn in handler", unicorn);
-  }
+  // handleUpdateData = (unicorn) => {
+  //   console.log("Unicorn in handler", unicorn);
+  // }
 
     render() {
       return (

@@ -11,9 +11,8 @@ class Main extends React.Component {
                 <Row xs={1} md={2} lg={3} id="Row"> 
                     
                     {this.props.unicornData.map((unicorn, idx) =>
-                    <Col>
+                    <Col key={idx}>
                         <Unicorn
-                            key={idx}
                             idx={idx}
                             unicorn={unicorn}
                             name={unicorn.name}
@@ -21,7 +20,7 @@ class Main extends React.Component {
                             color={unicorn.color}
                             location={unicorn.location}
                             imgUrl={unicorn.imgUrl}
-                            handleUpdate={this.props.handleUpdate}
+                            // handleUpdate={this.props.handleUpdate}
                         />
                     </Col>
                     )}
