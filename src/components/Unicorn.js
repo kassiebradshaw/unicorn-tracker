@@ -17,7 +17,6 @@ class Unicorn extends React.Component {
         event.preventDefault();
         this.props.handleUpdate(this.props.unicorn, this.state.newLocation);
         alert(`The form was submitted. ${this.props.name} has been moved to: ${this.state.newLocation}`);
-        this.setState({location: this.state.newLocation});
     }
 
     handleChangeLocation(event) {
@@ -26,7 +25,8 @@ class Unicorn extends React.Component {
 
     render() {
         return (
-            <Card style={{backgroundColor:`${this.props.color}`}} idx={this.props.idx} className="unicorns">
+            <Card style={{backgroundColor:`${this.props.color}`}} key={this.props.idx} className="
+            ">
                 <Card.Img variant="top" src={this.props.imgUrl}/>
                 <Card.Body>
                 <Card.Title>Name: {this.props.name}</Card.Title>
