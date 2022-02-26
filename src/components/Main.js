@@ -20,7 +20,7 @@ class Main extends React.Component {
                             color={unicorn.color}
                             location={unicorn.location}
                             imgUrl={unicorn.imgUrl}
-                            // handleUpdate={this.props.handleUpdate}
+                            handleUpdate={this.props.handleUpdate}
                         />
                     </Col>
                     )}

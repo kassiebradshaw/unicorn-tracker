@@ -39,7 +39,7 @@ class App extends React.Component {
     })
 
     this.setState({unicornData: newData});
-    console.log(this.state.unicornData);
+    console.log("Inside the handler after moving unicorn", this.state.unicornData);
     
   }
 
